@@ -64,8 +64,13 @@ const App = () => {
     const options = {
       margin: 0,
       filename: 'CV-Fernando-Diaz.pdf',
-      image: { type: 'jpeg' as const, quality: 0.98 },
-      html2canvas: { scale: 2, useCORS: true },
+      image: { type: 'jpeg' as const, quality: 1 },
+      hhtml2canvas: { 
+        scale: 2, 
+        useCORS: true,
+        windowWidth: 1120,  // fuerza ancho fijo de escritorio
+        scrollY: 0
+      },
       jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' as const}
     };
     html2pdf().set(options).from(cvRef.current).save();
@@ -73,7 +78,7 @@ const App = () => {
 
   return (
     <div className="min-h-screen bg-[#0f1113] text-[#f8fafc] font-sans selection:bg-[#deff9a] selection:text-[#0f1113] p-4 md:p-8 lg:p-12">
-      <div ref={cvRef} className="max-w-6xl mx-auto flex flex-col lg:flex-row bg-[#1a1d21] rounded-[2rem] overflow-hidden border border-[#2d3339] shadow-2xl">
+      <div ref={cvRef} className="max-w-6xl mx-auto flex flex-col lg:flex-row bg-[#1a1d21] rounded-[2rem] overflow-hidden border border-[#2d3339] shadow-2xl" style={{ width: '1120px' }}>
         
         {/* SIDEBAR */}
         <aside className="w-full lg:w-[350px] bg-[#14171a] p-8 lg:p-10 border-b lg:border-b-0 lg:border-r border-[#2d3339]">
