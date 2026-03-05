@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import html2pdf from 'html2pdf.js';
+import { PDFDownloadLink } from '@react-pdf/renderer';
+import CVDocument from './CVDocument';
 import fotoFernando from './img/fotoCV2.png';
 import { 
   Mail, Phone, MapPin, Code2, Database, Smartphone, 
@@ -59,26 +60,9 @@ const App = () => {
 
   const cvRef = React.useRef<HTMLDivElement>(null);
 
-  const handleDownload = () => {
-    if (!cvRef.current) return;
-    const options = {
-      margin: 0,
-      filename: 'CV-Fernando-Diaz.pdf',
-      image: { type: 'jpeg' as const, quality: 1 },
-      hhtml2canvas: { 
-        scale: 2, 
-        useCORS: true,
-        windowWidth: 1120,  // fuerza ancho fijo de escritorio
-        scrollY: 0
-      },
-      jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' as const}
-    };
-    html2pdf().set(options).from(cvRef.current).save();
-  };
-
   return (
     <div className="min-h-screen bg-[#0f1113] text-[#f8fafc] font-sans selection:bg-[#deff9a] selection:text-[#0f1113] p-4 md:p-8 lg:p-12">
-      <div ref={cvRef} className="max-w-6xl mx-auto flex flex-col lg:flex-row bg-[#1a1d21] rounded-[2rem] overflow-hidden border border-[#2d3339] shadow-2xl" style={{ width: '1120px' }}>
+      <div ref={cvRef} id="cv-print" className="max-w-6xl mx-auto flex flex-col lg:flex-row bg-[#1a1d21] rounded-[2rem] overflow-hidden border border-[#2d3339] shadow-2xl" style={{ width: '1120px' }}>
         
         {/* SIDEBAR */}
         <aside className="w-full lg:w-[350px] bg-[#14171a] p-8 lg:p-10 border-b lg:border-b-0 lg:border-r border-[#2d3339]">
@@ -182,9 +166,13 @@ const App = () => {
             </p>
             
             <div className="flex flex-wrap gap-4 mt-8">
-              <button onClick={handleDownload} className="flex items-center gap-2 bg-[#deff9a] text-[#0f1113] px-6 py-3 rounded-xl font-bold text-sm hover:scale-105 transition-all shadow-lg shadow-[#deff9a]/10">
-                <Download size={18} /> Descargar CV
-              </button>
+              <PDFDownloadLink document={<CVDocument />} fileName="CV-Fernando-Diaz.pdf">
+                {({ loading }) => (
+                  <button className="flex items-center gap-2 bg-[#deff9a] text-[#0f1113] px-6 py-3 rounded-xl font-bold text-sm hover:scale-105 transition-all shadow-lg shadow-[#deff9a]/10">
+                    <Download size={18} /> {loading ? 'Generando...' : 'Descargar CV'}
+                  </button>
+                )}
+              </PDFDownloadLink>
               <div className="flex gap-2">
                 <a href="https://www.linkedin.com/in/luisfernandodiaztrinidad/" className="p-3 bg-[#2d3339] rounded-xl text-[#f8fafc] hover:bg-[#deff9a] hover:text-[#0f1113] transition-all">
                   <Linkedin size={20} />
