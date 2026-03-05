@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/CVFernando/static/css/main.d436d4e9.css",
+    "main.js": "/CVFernando/static/js/main.b512f816.js",
+    "static/media/fotoCV2.png": "/CVFernando/static/media/fotoCV2.018dc778262742473a71.png",
+    "index.html": "/CVFernando/index.html",
+    "main.d436d4e9.css.map": "/CVFernando/static/css/main.d436d4e9.css.map",
+    "main.b512f816.js.map": "/CVFernando/static/js/main.b512f816.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d436d4e9.css",
+    "static/js/main.b512f816.js"
+  ]
+}
