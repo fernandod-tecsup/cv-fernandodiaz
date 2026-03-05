@@ -1,5 +1,4 @@
-import { Document, Page, Text, View, Image, StyleSheet } from '@react-pdf/renderer';
-import foto from './img/fotoCV2.png';
+import { Document, Page, Text, View, Image, StyleSheet, Svg, Path, Circle } from '@react-pdf/renderer';
 
 const styles = StyleSheet.create({
   page: {
@@ -222,7 +221,7 @@ const styles = StyleSheet.create({
     lineHeight: 1.5,
   },
 });
-
+const foto = `${window.location.origin}/CVFernando/build/static/media/fotoCV2.018dc778262742473a71.png`;
 const experience = [
   {
     title: "Analista Senior Java Backend",
@@ -356,13 +355,31 @@ const CVDocument = () => (
         <Text style={[styles.tabTitle, { marginTop: 14 }]}>Competencias</Text>
         <View style={styles.competenciasGrid}>
           {[
-            { title: "Liderazgo Técnico", desc: "Guía decisiones de arquitectura y mejores prácticas.", emoji: "⚡" },
-            { title: "Adaptabilidad", desc: "Rápida curva de aprendizaje ante nuevos stacks.", emoji: "🎯" },
-            { title: "Calidad de Código", desc: "Enfoque estricto en principios SOLID y Clean Code.", emoji: "💎" },
-            { title: "Trabajo en Equipo", desc: "Experiencia en metodologías ágiles.", emoji: "🤝" },
+            { title: "Liderazgo Técnico", desc: "Guía decisiones de arquitectura y mejores prácticas.", icon: (
+            <Svg width="16" height="16" viewBox="0 0 24 24">
+                <Path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="#deff9a" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
+            </Svg>)},
+            { title: "Adaptabilidad", desc: "Rápida curva de aprendizaje ante nuevos stacks.", icon: (
+            <Svg width="16" height="16" viewBox="0 0 24 24">
+                <Circle cx="12" cy="12" r="10" stroke="#deff9a" strokeWidth="2" fill="none"/>
+                <Path d="M12 8l4 4-4 4M8 12h8" stroke="#deff9a" strokeWidth="2" fill="none" strokeLinecap="round"/>
+            </Svg>
+            )},
+            { title: "Calidad de Código", desc: "Enfoque estricto en principios SOLID y Clean Code.", icon: (
+            <Svg width="16" height="16" viewBox="0 0 24 24">
+                <Path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke="#deff9a" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
+            </Svg>
+            )},
+            { title: "Trabajo en Equipo", desc: "Experiencia en metodologías ágiles.", icon: (
+            <Svg width="16" height="16" viewBox="0 0 24 24">
+                <Path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="#deff9a" strokeWidth="2" fill="none" strokeLinecap="round"/>
+                <Circle cx="9" cy="7" r="4" stroke="#deff9a" strokeWidth="2" fill="none"/>
+                <Path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" stroke="#deff9a" strokeWidth="2" fill="none" strokeLinecap="round"/>
+            </Svg>
+            )},
           ].map((c, i) => (
             <View key={i} style={styles.compCard}>
-              <Text style={styles.compEmoji}>{c.emoji}</Text>
+              <View style={styles.compEmoji}>{c.icon}</View>
               <Text style={styles.compTitle}>{c.title}</Text>
               <Text style={styles.compDesc}>{c.desc}</Text>
             </View>
