@@ -20,7 +20,7 @@ const App = () => {
       phone: "981549279",
       location: "Lima, Perú"
     },
-    techBackend: ["Java Spring Boot", "Microservicios", "Arquitectura Hexagonal", "PHP Nativo", "API REST / SOAP", "SOLID Principles","API REST"],
+    techBackend: ["Java Spring Boot", "Microservicios", "Arquitectura Hexagonal", "PHP Nativo", "API REST / SOAP", "SOLID Principles"],
     techCloud: ["SQL", "MySQL", "MongoDB", "Firebase Firestore", "Realtime Database", "Git / GitLab / GitHub","Postman"],
     techMobile: ["Kotlin", "Jetpack Compose", "Clean Architecture", "MVVM" , "Java", "Firebase","Android Studio","Material Design 3"]
   };
@@ -52,7 +52,8 @@ const App = () => {
       period: "2021 — 2022",
       points: [
         "Desarrollo de Backend en PHP Nativo para sistemas de administración web.",
-        "Sistematización de procesos portuarios incluyendo firma digital y generación automatizada de documentos PDF.",
+        "Sistematización de procesos portuarios incluyendo firma digital y generación automatizada de documentos PDF en Kotlin.",
+        "Optimización del aplicativo móvil Oceano Seafood mediante integraciones API REST en JAVA y Kotlin.",
         "Manejo de flujos de datos en tiempo real para inventarios mediante Firebase."
       ]
     }

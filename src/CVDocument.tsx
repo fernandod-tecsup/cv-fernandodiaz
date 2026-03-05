@@ -250,7 +250,8 @@ const experience = [
     period: "2021 — 2022",
     points: [
       "Desarrollo de Backend en PHP Nativo para sistemas de administración web.",
-      "Sistematización de procesos portuarios con firma digital y generación de PDFs.",
+      "Sistematización de procesos portuarios con firma digital y generación de PDFs en kotlin.",
+      "Optimización del aplicativo móvil Oceano Seafood mediante integraciones API REST en JAVA y Kotlin.",
       "Manejo de flujos de datos en tiempo real mediante Firebase.",
     ],
   },
@@ -280,7 +281,7 @@ const CVDocument = () => (
 
         <Text style={styles.sectionTitle}>Data & Cloud</Text>
         <View style={styles.tagsRow}>
-          {["SQL","Firebase Firestore","Realtime Database","Git / GitLab / GitHub"].map(t => (
+          {["SQL", "MySQL", "MongoDB", "Firebase Firestore", "Realtime Database", "Git / GitLab / GitHub","Postman"].map(t => (
             <View key={t} style={[styles.tag, { borderColor: '#8596ac', backgroundColor: '#94a3b808' }]}>
               <Text style={{ color: '#94a3b8' }}>{t}</Text>
             </View>
@@ -289,7 +290,7 @@ const CVDocument = () => (
 
         <Text style={styles.sectionTitle}>Mobile</Text>
         <View style={styles.tagsRow}>
-          {["Kotlin","Jetpack Compose","Clean Architecture","MVVM"].map(t => (
+          {["Kotlin", "Jetpack Compose", "Clean Architecture", "MVVM" , "Java", "Firebase","Android Studio","Material Design 3"].map(t => (
             <View key={t} style={[styles.tag, { borderColor: '#0d4589', backgroundColor: '#60a5fa08' }]}>
               <Text style={{ color: '#60a5fa' }}>{t}</Text>
             </View>
