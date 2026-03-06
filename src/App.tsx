@@ -160,7 +160,7 @@ const App = () => {
               Fernando <span className="text-[#deff9a]">Diaz Trinidad</span>
             </h1>
             <div className="text-xl md:text-2xl font-semibold text-[#deff9a]/90 mb-6">
-              Analista Programador Backend
+              Desarrollador Backend & Mobile Android | Java Spring Boot · Kotlin · Microservicios
             </div>
             <p className="text-[#94a3b8] text-lg leading-relaxed max-w-2xl">
               {profile.summary}

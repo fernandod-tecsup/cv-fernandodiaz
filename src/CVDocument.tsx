@@ -310,7 +310,7 @@ const CVDocument = () => (
       {/* MAIN */}
       <View style={styles.main}>
         <Text style={styles.name}>Fernando Diaz Trinidad</Text>
-        <Text style={styles.role}>Analista Programador Backend</Text>
+        <Text style={styles.role}>Desarrollador Backend & Mobile Android | Java Spring Boot · Kotlin · Microservicios</Text>
         <Text style={styles.summary}>
           Profesional egresado de TECSUP con sólida trayectoria en el diseño e implementación de arquitecturas escalables. Experto en optimización de lógica de servidor y microservicios robustos, con un enfoque analítico para la resolución de problemas complejos.
         </Text>
