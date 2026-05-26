@@ -17,7 +17,7 @@ const App = () => {
     summary: "Profesional egresado de TECSUP con sólida trayectoria en el diseño e implementación de arquitecturas escalables. Experto en optimización de lógica de servidor y microservicios robustos, con un enfoque analítico para la resolución de problemas complejos.",
     contact: {
       email: "luis.diaz.tr@tecsup.edu.pe",
-      phone: "981549279",
+      phone: "927815717",
       location: "Lima, Perú"
     },
     techBackend: ["Java Spring Boot", "Microservicios", "Arquitectura Hexagonal", "PHP Nativo", "API REST / SOAP", "SOLID Principles"],
